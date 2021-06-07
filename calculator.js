@@ -1,43 +1,37 @@
-"use strict"
-let num1 = Number(document.getElementById('value1').value)||0;
-let num2 = Number(document.getElementById('value2').value)||0;
-let oper = document.getElementById('operators').value;
-function calculator(){
-    document.getElementById('calculate').addEventListener('click', event=>{ 
 
-        if (oper === '+'){
-            document.getElementById('result').value = num1 + num2 ;
+let num1 =document.getElementById('value1');
+let result = document.getElementById('result');
+let num2 = document.getElementById('value2');
+let oper = document.getElementById('operators');
+
+
+    document.getElementById('calculate').addEventListener('click', function(){
+
+        if (oper.value === '+'){
+            result.value = +num1.value + +num2.value ;
             
 
         }
         
-      else  if (oper === '-'){
-            document.getElementById('result').value = num1 - num2;
+      if (oper.value === '-'){
+            result.value = +num1.value - +num2.value;
 
         }
        
 
-else if (oper === '*'){
-            document.getElementById('result').value = num1 * num2;
+if (oper.value === '*'){
+            result.value = +num1.value * +num2.value;
 
         }
 
 
-else if (oper === '/'){
-    document.getElementById('result').value = num1 / num2;
+ if (oper.value === '/'){
+    result.value = +num1.value / +num2.value;
 
 }
-
-else{
-    alert("Value X must be a number");
+ if(isNaN(num1.value + num2.value)) { 
+alert("Value   must be a number")
 }
+
 
     })
-
-};
-
-
-
-
-
-calculator();
